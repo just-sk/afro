@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation | AFRO</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="confirmation-message">
+            <h1>Thank You for Your Order!</h1>
+            <p>We've sent a confirmation email with your order details.</p>
+            <p>Your order number is: <strong id="order-number"></strong></p>
+            <a href="index.html" class="btn">Back to Home</a>
+        </div>
+    </div>
+
+    <script>
+        // Get order details from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const orderData = JSON.parse(decodeURIComponent(urlParams.get('order')));
+        
+        // Display order number
+        document.getElementById('order-number').textContent = `ORD-${Date.now()}`;
+    </script>
+</body>
+</html>
